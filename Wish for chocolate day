@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Chocolate Day!</title>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+        
+        .rose {
+            position: absolute;
+            animation: fall 10s linear infinite;
+        }
+        
+        @keyframes fall {
+            0% {
+                transform: translateY(-100vh);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Chocolate Day!</h1>
+    <div id="roses"></div>
+    <script>
+        function createRose(color) {
+            const rose = document.createElement("img");
+            rose.src = `https://emojicdn.elk.sh/🌹?size=64&color=${color}`;
+            rose.classList.add("rose");
+            rose.style.left = `${Math.random() * 90}vw`;
+            document.getElementById("roses").appendChild(rose);
+        }
+        
+        function callMe() {
+            window.location.href = "tel:+1234567890"; // Replace with your phone number
+        }
+        
+        setInterval(function() {
+            const colors = ["red", "pink", "white", "rainbow"];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            createRose(randomColor);
+        }, 500);
+    </script>
+    <p>Options: <a href="tel:+8617271882">Call Me</a></p> <!-- Replace with your phone number -->
+</body>
+</html>
